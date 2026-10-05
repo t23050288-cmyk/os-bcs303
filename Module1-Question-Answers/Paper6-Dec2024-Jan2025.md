@@ -80,12 +80,24 @@ Resource Allocation, Accounting, Protection and Security.
 
 ## Q.2 b) Explain the different computing equipments [environments]. [6]
 
-### Points
-1. Traditional/time-sharing computing.
-2. Client-Server computing (compute-server, file-server).
-3. Peer-to-Peer computing.
-4. Web-based/Cloud computing.
-5. Distributed computing.
+### The 5 Computing Environments (each explained)
+1. **Traditional / Time-Sharing Computing** — started as batch systems (no
+   interaction) and grew into interactive time-sharing, where the CPU rapidly
+   cycles among many users so each feels they have their own machine. Modern
+   versions add web technology and firewalls.
+2. **Client-Server Computing** — clients send requests, servers respond.
+   A **compute-server** executes the work (e.g. a database server) and returns
+   results; a **file-server** serves files (create/read/update/delete).
+3. **Peer-to-Peer (P2P) Computing** — there is no fixed client or server;
+   every node is a peer that can both request and provide services. No single
+   server bottleneck. Example: BitTorrent file sharing.
+4. **Web-Based / Cloud Computing** — computing resources are delivered over
+   the Internet instead of run locally: **IaaS** (raw virtual machines),
+   **PaaS** (a ready platform to deploy apps), **SaaS** (ready software like
+   Gmail).
+5. **Distributed Computing** — physically separate computers connected by a
+   network (LAN/WAN) that share resources, increasing speed, functionality,
+   and reliability.
 
 ---
 
@@ -94,10 +106,23 @@ Resource Allocation, Accounting, Protection and Security.
 ### Definition
 A system call is the interface a process uses to request a service from the OS.
 
-### 6 Types
-1. Process Control
-2. File Management
-3. Device Management
-4. Information Maintenance
-5. Communications
-6. Protection
+### 6 Types of System Calls (each explained)
+1. **Process Control** — controls how programs run: creating a new process,
+   terminating one, waiting for an event, and allocating or freeing memory for
+   a program. Example calls: `fork()` to create a child process, `exit()` to
+   end a process, `wait()` to wait for a child.
+2. **File Management** — all work with files: create, delete, open, close,
+   read, write, and change file properties like permissions. Example calls:
+   `open()`, `read()`, `write()`, `close()`.
+3. **Device Management** — requests and releases hardware devices (disk,
+   printer) and reads/writes from them. Example calls: `ioctl()`,
+   `read()`, `write()`.
+4. **Information Maintenance** — transfers status information between the user
+   program and the OS: date, time, process ID, system statistics.
+   Example calls: `getpid()`, `time()`, `alarm()`.
+5. **Communications** — used for inter-process communication: creating
+   connections, sending and receiving messages between processes.
+   Example calls: `pipe()`, `send()`, `receive()`.
+6. **Protection** — controls which users/processes can access which resources,
+   and grants temporary extra permissions when allowed.
+   Example call: `chmod()` to change file access permissions.

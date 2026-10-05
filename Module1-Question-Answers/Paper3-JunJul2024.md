@@ -83,13 +83,25 @@ environments, each appearing to run on its own private computer.
 A system call is the interface through which a user program requests a service
 from the OS kernel.
 
-### 6 Types
-1. **Process Control** — create/terminate process, allocate/free memory.
-2. **File Management** — create, open, read, write, close files.
-3. **Device Management** — request/release device, read/write.
-4. **Information Maintenance** — get/set time, system data.
-5. **Communications** — send/receive messages, create connections.
-6. **Protection** — control resource access permissions.
+### 6 Types of System Calls
+1. **Process Control**:
+   Controls process execution, creation, and termination. It manages process attributes, waits for events, and handles memory allocation.
+   - *Example calls:* `fork()` (create child process), `exit()` (terminate), `wait()` (wait for child process).
+2. **File Management**:
+   Handles file operations such as creating, deleting, opening, closing, reading, writing, and repositioning file pointers.
+   - *Example calls:* `open()`, `read()`, `write()`, `close()`, `unlink()` (delete file).
+3. **Device Management**:
+   Requests, releases, and operates hardware devices (like disks, keyboards, and displays). It reads, writes, and sets device properties.
+   - *Example calls:* `ioctl()` (device control), `read()`, `write()`, `request()`.
+4. **Information Maintenance**:
+   Transfers system data and process properties between user applications and the OS. Gets or sets current time, date, and process IDs.
+   - *Example calls:* `getpid()` (get process ID), `time()`, `alarm()`.
+5. **Communications**:
+   Manages the creation and deletion of connection channels to send or receive messages between processes locally or over a network.
+   - *Example calls:* `pipe()` (IPC channel), `shmget()` (shared memory), `send()`, `recv()`.
+6. **Protection**:
+   Controls and restricts access to files, processes, and system resources to ensure security and prevent unauthorized access.
+   - *Example calls:* `chmod()` (change permissions), `umask()`, `chown()` (change file owner).
 
 ---
 

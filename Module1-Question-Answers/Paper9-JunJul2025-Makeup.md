@@ -87,13 +87,26 @@ Programs, and Users.
 
 ## Q.2 a) Explain types of system calls provided by operating system. [6]
 
-### 6 Types
-1. Process Control
-2. File Management
-3. Device Management
-4. Information Maintenance
-5. Communications
-6. Protection
+### 6 Types of System Calls (each explained)
+1. **Process Control** — controls how programs run: creating a new process,
+   terminating one, waiting for an event, and allocating or freeing memory for
+   a program. Example calls: `fork()` to create a child process, `exit()` to
+   end a process, `wait()` to wait for a child.
+2. **File Management** — all work with files: create, delete, open, close,
+   read, write, and change file properties like permissions. Example calls:
+   `open()`, `read()`, `write()`, `close()`.
+3. **Device Management** — requests and releases hardware devices (disk,
+   printer) and reads/writes from them. Example calls: `ioctl()`,
+   `read()`, `write()`.
+4. **Information Maintenance** — transfers status information between the user
+   program and the OS: date, time, process ID, system statistics.
+   Example calls: `getpid()`, `time()`, `alarm()`.
+5. **Communications** — used for inter-process communication: creating
+   connections, sending and receiving messages between processes.
+   Example calls: `pipe()`, `send()`, `receive()`.
+6. **Protection** — controls which users/processes can access which resources,
+   and grants temporary extra permissions when allowed.
+   Example call: `chmod()` to change file access permissions.
 
 ---
 

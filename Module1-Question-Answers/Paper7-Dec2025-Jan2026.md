@@ -19,6 +19,22 @@ A system call is the interface a process uses to request a service from the OS.
 | Communications | `pipe()` | Create an IPC channel between processes |
 | Protection | `chmod()` | Change a file's access permissions |
 
+### Each Category Explained
+1. **Process Control** — manages the running of programs: creating processes
+   (`fork()`), terminating them (`exit()`), waiting for events, and
+   allocating/freeing memory.
+2. **File Management** — performs operations on files: create, open, read,
+   write, close, delete, and change permissions.
+3. **Device Management** — requests and releases hardware devices and
+   controls input/output to/from them.
+4. **Information Maintenance** — gets or sets system information like date,
+   time, process IDs, and statistics.
+5. **Communications** — allows processes to talk to each other: creating
+   connections, sending and receiving messages (message passing or shared
+   memory).
+6. **Protection** — controls access to resources and can grant temporary
+   elevated permissions.
+
 ---
 
 ## Q.1 b) Explain cloud computing its types and their services it offers. [8]

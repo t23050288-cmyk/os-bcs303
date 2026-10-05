@@ -16,18 +16,24 @@ a service from the operating system.
 3. Each system call has a unique number, looked up via a **system call table**.
 
 ### 6 Types of System Calls
-1. **Process Control** — end, abort, create process, terminate process, wait
-   event, allocate/free memory.
-2. **File Management** — create, delete, open, close, read, write, reposition,
-   get/set file attributes.
-3. **Device Management** — request/release device, read, write, reposition,
-   get/set device attributes.
-4. **Information Maintenance** — get/set time or date, system data, process/file
-   attributes.
-5. **Communications** — create/delete connection, send/receive messages (message
-   passing or shared memory models).
-6. **Protection** — adjust access-control mechanisms, grant temporary elevated
-   permissions.
+1. **Process Control**:
+   Controls process execution, creation, and termination. It manages process attributes, waits for time or events, and allocates or frees memory space.
+   - *Example calls:* `fork()` (create process), `exit()` (terminate), `wait()` (wait for event), `allocate()` (memory).
+2. **File Management**:
+   Handles file operations such as creating, deleting, opening, closing, reading, writing, and repositioning pointers in files. It also manages file attributes like permissions.
+   - *Example calls:* `open()`, `read()`, `write()`, `close()`, `unlink()` (delete file).
+3. **Device Management**:
+   Requests, releases, and operates hardware devices like disk drives and printers. It allows programs to read from, write to, and set properties of physical or virtual devices.
+   - *Example calls:* `ioctl()` (device control), `read()`, `write()`, `request()`.
+4. **Information Maintenance**:
+   Transfers status data between user programs and the operating system. It allows programs to read or set system date, time, process IDs, and performance statistics.
+   - *Example calls:* `getpid()` (get process ID), `time()`, `alarm()`.
+5. **Communications**:
+   Manages data transfer and message exchanges between different processes on the same system or across a network. Supports message passing and shared memory models.
+   - *Example calls:* `pipe()` (IPC channel), `shmget()` (shared memory), `send()`, `recv()`.
+6. **Protection**:
+   Controls access to computer resources, files, and processes to prevent illegal access. Sets file permissions and grants or revokes user rights.
+   - *Example calls:* `chmod()` (change permissions), `umask()`, `chown()` (change owner).
 
 ---
 

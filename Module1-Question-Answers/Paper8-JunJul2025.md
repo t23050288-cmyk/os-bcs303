@@ -96,10 +96,21 @@ Even a simple 2-file program needs a dozen+ system calls.
 
 ## Q.2 c) Discuss in detail about Operating System structure. [6]
 
-### Points
-1. **Simple structure** (MS-DOS) — no layer separation, risky.
-2. **Layered approach** — layers use only lower layers; simple to debug, less
-   efficient.
-3. **Microkernels** — minimal kernel + user-space services via message passing.
-4. **Modules** — small kernel + modules that call each other directly.
-5. **Hybrid** — most modern OSes combine multiple structures.
+### Each Structure Explained
+1. **Simple Structure** — the OS is not divided into layers at all. Example:
+   MS-DOS, where an application can directly access the hardware. Easy to
+   build, but one bad program can crash the whole system.
+2. **Layered Approach** — the OS is split into layers, where each layer uses
+   only the services of the layer BELOW it. Layer 0 is hardware; the top layer
+   is the user interface. Easy to build and debug (bottom-up), but slower
+   because every request to the hardware must pass through all layers.
+3. **Microkernels** — keep only the minimum in the kernel (IPC, basic memory
+   and CPU management); everything else (file system, device drivers) runs as
+   user-space programs that communicate by message passing. Easy to extend and
+   safer, but slower because messages cost more than direct calls.
+4. **Modules** — a small core kernel plus loadable modules (like plug-ins)
+   that can call each other directly. Best of both worlds: layered
+   organization without message-passing overhead. Used by Linux, Solaris,
+   macOS.
+5. **Hybrid Systems** — most real OSes (Windows, macOS, Linux) mix several of
+   these structures instead of following one pure approach.
