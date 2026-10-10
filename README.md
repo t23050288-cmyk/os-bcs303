@@ -27,6 +27,12 @@ separate files here: **Set A** and **Set B**. Two other files sent
 
 ## Contents
 
+### Blue Book Assignment (5 questions x 10 marks)
+
+| File | Covers |
+|---|---|
+| [OS-BlueBook-Assignment.md](OS-BlueBook-Assignment.md) | Q1 OS definition, services, dual-mode; Q2 system calls + layered/microkernel/modular structures; Q3 process states, PCB, fork() trace and process tree; Q4 multithreading models + web server analysis; Q5 shared memory vs message passing with justification |
+
 ### Module 1 — Introduction to Operating Systems
 
 | Format | Where |
